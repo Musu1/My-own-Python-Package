@@ -1,35 +1,84 @@
-# My-own-Python-Package
-Developed a python package for Gaussian distribution
+# Probability_Distributions Package
 
-Gaussian Distribution Formulas
-probability density function
- 	 
+This package gives the functionality for Gaussian and Binomial probability Distributions.
 
-Binomial Distribution Formulas
-mean
-\mu = n * pμ=n∗p
+# Files
 
-In other words, a fair coin has a probability of a positive outcome (heads) p = 0.5. If you flip a coin 20 times, the mean would be 20 * 0.5 = 10; you'd expect to get 10 heads.
+`license.txt` - This file contains permissions related to the package usage
+`__init__.py` - This file imports necessary classes when you import this package
+`Generaldistribution.py` - This python file has the parent class with functionality that can be used in Binomialdistribution and Gaussiandistribution classes
+`Gaussiandistribution.py` - This python file defines functionality that can be done with the Gaussian probability distribution
+`Binomialdistribution.py` - This python file defines functionality that can be done with the Binomial probability distribution
 
-variance
-\sigma^2 = n * p * (1 - p)σ 
-2
- =n∗p∗(1−p)
+# Installation
 
-Continuing with the coin example, n would be the number of coin tosses and p would be the probability of getting heads.
+To install this package use the following command:
+`pip install Probability_Distributions`
 
-standard deviation
-\sigma = \sqrt{n * p * (1 - p)}σ= 
-n∗p∗(1−p)
-​	 
+# Usage of the package
 
-or in other words, the standard deviation is the square root of the variance.
+## Gaussian Distribution Functions
 
-probability density function
-f(k, n, p) = \frac{n\footnotesize{!}}{k!(n - k)!}p^k(1-p)^{(n-k)}f(k,n,p)= 
-k!(n−k)!
-n!
-​	 p 
-k
- (1−p) 
-(n−k)
+1. To define a Gaussian distribution with mean m and standard deviation s
+`gaussianDistributionName=Gaussian(m,s)`
+
+2. To initialize a gaussian distribution reading in a data efile
+
+`gaussianDistributionName= Gaussian()
+ gaussianDistributionName.read_data_file('numbers.txt')`
+ 
+ To Calculate mean and standard deviation of such Distribution
+ 
+ `gaussianDistributionName.calculate_mean()
+  gaussianDistributionName.calculate_stdev()`
+
+3. To show the mean of a gaussian distribution
+`gaussianDistributionName.mean`
+
+4. To show the standard deviation of a gaussian distribution
+`gaussianDistributionName.stdev`
+
+5. To add two gaussian distribution
+`gaussian_sum = gaussianDistributionOne + gaussianDistributionTwo`
+
+6. Function to plot the normalized histogram of the data and a plot of the probability density function along the same range
+`gaussianDistributionName.plot_histogram_pdf()`
+
+7. Function to calculate the Probability density function for the gaussian distribution at a point x 
+`gaussianDistributionName.pdf()`
+
+8. Function to output a histogram of the data
+`gaussianDistributionName.plot_histogram()`
+
+## Binomial Distribution Function
+
+1. To define a Binomial distribution with probability p and size s
+`binomialDistributionName=Binomial(p,s)`
+
+2. To initialize a gaussian distribution reading in a data efile
+
+`binomialDistributionName= Binomial()
+ binomialDistributionName.read_data_file('numbers.txt')`
+ 
+ To Calculate mean and standard deviation of such Distribution
+ 
+`binomialDistributionName.calculate_mean()
+ binomialDistributionName.calculate_stdev()`
+
+3. To show the mean of a gaussian distribution
+`binomialDistributionName.mean`
+
+4. To show the standard deviation of a gaussian distribution
+`binomialDistributionName.stdev`
+
+5. To add two gaussian distribution
+`binomial_sum = binomialDistributionOne + binomialDistributionTwo`
+
+6. Function to output a histogram of the instance variable data
+`binomialDistributionName.plot_bar()`
+
+7. Function to calculate the Probability density function for the binomial distribution at a point x 
+`binomialDistributionName.pdf()`
+
+8. Function to plot the pdf of the binomial distribution
+`binomialDistributionName.plot_bar_pdf()`
